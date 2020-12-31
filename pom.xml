@@ -74,9 +74,9 @@
         </dependency>
 
     </dependencies>
-    
+
     <build>
-        <finalName>java-helloworld-web-app</finalName>
+        <finalName>java-calculator-web-app</finalName>
     </build>
 
 </project>
