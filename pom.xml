@@ -74,6 +74,9 @@
         </dependency>
 
     </dependencies>
-
+    
+    <build>
+        <finalName>java-helloworld-web-app</finalName>
+    </build>
 
 </project>
