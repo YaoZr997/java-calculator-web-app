@@ -1,5 +1,5 @@
 # A Java Calculator Web Application
-[![Build Status](https://dev.azure.com/maping930883/java-helloworld-web-app/_apis/build/status/java-helloworld-web-app-Maven-CI?branchName=master)](https://dev.azure.com/maping930883/java-helloworld-web-app/_build/latest?definitionId=26&branchName=master)
+[![Build status](https://dev.azure.com/maping930883/java-calculator-web-app/_apis/build/status/java-calculator-web-app-Maven-CI%26CD)](https://dev.azure.com/maping930883/java-calculator-web-app/_build/latest?definitionId=32)
 
 ## 1. Create a repo manually
 
