@@ -14,7 +14,7 @@ public class CalculatorService {
     @Path("ping")
     @Produces(MediaType.TEXT_PLAIN)
     public String ping() {
-        return "Welcome to Java calculator web app!!!\n" + new Date().toString();
+        return "Welcome to Java Calculator Web App!\n\n" + new Date().toString();
     }
 
     @GET

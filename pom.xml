@@ -12,7 +12,9 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <jersey-version>3.0.0</jersey-version>
+        <!-- org.glassfish.jersey 3.0.0 runtime error: 源服务器未能找到目标资源的表示或者是不愿公开一个已经存在的资源表示 -->
+        <jersey-version>2.33</jersey-version>
+
     </properties>
 
     <dependencyManagement>
