@@ -1,12 +1,15 @@
 # A Java Calculator Web Application
 [![Build status](https://dev.azure.com/maping930883/java-calculator-web-app/_apis/build/status/java-calculator-web-app-Maven-CI%26CD)](https://dev.azure.com/maping930883/java-calculator-web-app/_build/latest?definitionId=32)
 
+Maven default lifecycle phases:
+validate->compile->test->package->integration-test->verify->install->deploy
+
 ## 1. Create a repo manually
 
 ### 1.1 Create a repo on GitHub
 Click "Repositories",then click "New" button,input "java-calculator-web-app", leave all other input as default, click "Create repository".
 
-### 1.2 Create a Java calculator web app by Maven
+### 1.2 Create a Jersey REST web app by Maven archetype
 ```console
 $ cd /mnt/c/Users/pinm/code/maven/
 $ mvn archetype:generate 
@@ -50,26 +53,25 @@ $ git commit -m "add java maven jersey archetype web app"
 $ git remote add origin https://github.com/maping/java-calculator-web-app.git 
 $ git push -u origin master
 ```
-## 2. Create a Maven CI pipeline
 
-## 3. Create a Maven CI pipeline
+## 2. Build
+```console
+$ mvn clean package
+```
+>Explain: -DskipTests, not execute test case, but compile test case; -Dmaven.test.skip=true，not compile test case, neither execute test case.
 
-## 4. Create a Self-Hosted VM CI pipeline
+## 3. Run Integration Test
+```console
+$ mvn clean integration-test
+```
 
-## 5. Create a Self-Hosted Docker CI pipeline
-### 5.1 Run as a standalone Docker container
-### 5.2 Deploy and run on Kubernetes
+## 4. Create a Maven CI&CD pipeline (Develop Environment)
 
-## 6. Create a Maven CI&CD pipeline (Develop Environment)
-### 6.1 Install a Tomcat VM manually
-### 6.2 Install a Tomcat VM automatically（Infrastructure as Code）
+## 5. Create a Multi-stage Release pipeline (Test -> Product Envirnonment） 
 
-## 7. Create a Multi-stage Release pipeline (Test -> Product Envirnonment） 
-### 7.1 Install two Tomcat VMs manually
-### 7.2 Install two Tomcat VMs automatically（Infrastructure as Code）
-
-## 8. Delete repo
+## 6. Delete repo
 Click repo "maping/java-calculator-web-app", then click "Settings", then drop down to "Danger Zone", click "Delete this repository".
 
 ## Reference
 1. [REST with Java (JAX-RS) using Jersey - Tutorial](https://www.vogella.com/tutorials/REST/article.html)
+2. https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#Lifecycle_Reference
