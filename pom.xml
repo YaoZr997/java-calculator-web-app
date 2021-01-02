@@ -17,17 +17,12 @@
 
     </properties>
 
-    <!-- <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.glassfish.jersey</groupId>
-                <artifactId>jersey-bom</artifactId>
-                <version>${jersey-version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement> -->
+    <distributionManagement>
+        <site>
+            <id>tomcatserver</id>
+            <url>dav:http://127.0.0.1:8080/webdav/</url>
+        </site>
+    </distributionManagement>
 
     <dependencies>
         <dependency>
@@ -252,6 +247,19 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>3.9.1</version>
+                <dependencies>
+                    <dependency>
+                        <!-- add support for webdav -->
+                        <groupId>org.apache.maven.wagon</groupId>
+                        <artifactId>wagon-webdav</artifactId>
+                        <version>1.0-beta-2</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
         </plugins>
     </build>
 
@@ -308,7 +316,7 @@
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>findbugs-maven-plugin</artifactId>
                 <version>3.0.5</version>
-              </plugin>
+            </plugin>
         </plugins>
     </reporting>
 
