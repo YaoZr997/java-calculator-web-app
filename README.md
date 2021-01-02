@@ -78,3 +78,5 @@ Click repo "maping/java-calculator-web-app", then click "Settings", then drop do
 3. https://checkstyle.sourceforge.io/index.html
 4. https://www.cnblogs.com/panie2015/p/5737468.html
 5. https://www.cnblogs.com/fnlingnzb-learner/p/10637802.html
+6. https://blog.csdn.net/iteye_7914/article/details/82450088
+7. https://maven.apache.org/plugins/maven-site-plugin/examples/adding-deploy-protocol.html
