@@ -107,7 +107,7 @@ $ vim web.xml
 Add server section in ~/.m2/settings.xml
 ```console
 $ vim ~/.m2/settings.xml
-  <server>
+    <server>
       <id>tomcatserver</id>
       <username>********</username>
       <password>********</password>
