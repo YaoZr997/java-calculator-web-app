@@ -67,6 +67,51 @@ $ mvn clean integration-test
 
 ## 4. Create a Maven CI&CD pipeline (Develop Environment)
 
+## 5. Generate Site
+```console
+$ mvn site
+```
+
+## 6. Deploy Site to a Tomcat Server
+Create webdav application
+```console
+$ cd %CATALINA_HOME%\webapps\
+$ mkdir webdav && cd webdav
+$ vim web.xml
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+    <servlet>
+        <servlet-name>webdav</servlet-name>
+        <servlet-class>org.apache.catalina.servlets.WebdavServlet</servlet-class>
+        <init-param>
+            <param-name>debug</param-name>
+            <param-value>0</param-value>
+        </init-param>
+        <init-param>
+            <param-name>listings</param-name>
+            <param-value>true</param-value>
+        </init-param>
+        <init-param>
+            <param-name>readonly</param-name>
+            <param-value>false</param-value>
+        </init-param>
+        <!--load-on-startup>1</load-on-startup-->
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>webdav</servlet-name>
+        <url-pattern>/*</url-pattern>
+    </servlet-mapping>
+</web-app>
+
+$ catalina.bat start
+```
+
+Start local Tomcat Server
+```console
+$ cd %CATALINA_HOME%\bin\
+$ catalina.bat start
+```
 ## 5. Create a Multi-stage Release pipeline (Test -> Product Envirnonment） 
 
 ## 6. Delete repo
