@@ -122,6 +122,16 @@ Deploy site
 ```console
 $ cd /mnt/c/Users/pinm/code/maven/java-calculator-web-app
 $ mvn site:deploy
+[INFO] --- maven-site-plugin:3.9.1:deploy (default-cli) @ java-calculator-web-app ---
+WAGON_VERSION: 1.0-beta-2
+[INFO] Pushing C:\Users\pinm\code\github\java-calculator-web-app\target\site
+[INFO]    >>> to http://127.0.0.1:8080/webdav/./
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  5.530 s
+[INFO] Finished at: 2021-01-03T10:40:20+08:00
+[INFO] ------------------------------------------------------------------------
 ```
 
 ## 7. Create a Multi-stage Release pipeline (Test -> Product Envirnonment） 
