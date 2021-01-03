@@ -103,18 +103,30 @@ $ vim web.xml
         <url-pattern>/*</url-pattern>
     </servlet-mapping>
 </web-app>
-
-$ catalina.bat start
 ```
-
-Start local Tomcat Server
+Add server section in ~/.m2/settings.xml
+```console
+$ vim ~/.m2/settings.xml
+  <server>
+      <id>tomcatserver</id>
+      <username>********</username>
+      <password>********</password>
+    </server>
+```
+Start local Tomcat server
 ```console
 $ cd %CATALINA_HOME%\bin\
 $ catalina.bat start
 ```
-## 5. Create a Multi-stage Release pipeline (Test -> Product Envirnonment） 
+Deploy site
+```console
+$ cd /mnt/c/Users/pinm/code/maven/java-calculator-web-app
+$ mvn site:deploy
+```
 
-## 6. Delete repo
+## 7. Create a Multi-stage Release pipeline (Test -> Product Envirnonment） 
+
+## 8. Delete repo
 Click repo "maping/java-calculator-web-app", then click "Settings", then drop down to "Danger Zone", click "Delete this repository".
 
 ## Reference
