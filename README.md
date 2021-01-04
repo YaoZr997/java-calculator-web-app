@@ -163,3 +163,8 @@ Click repo "maping/java-calculator-web-app", then click "Settings", then drop do
 5. https://www.cnblogs.com/fnlingnzb-learner/p/10637802.html
 6. https://blog.csdn.net/iteye_7914/article/details/82450088
 7. https://maven.apache.org/plugins/maven-site-plugin/examples/adding-deploy-protocol.html
+8. https://docs.sonarqube.org/latest/analysis/scan/sonarscanner-for-maven/
+9. https://blog.csdn.net/alinyua/article/details/83244983
+10. https://blog.csdn.net/alinyua/article/details/83267934
+11. [Azure DevOps integrate with SonarQube](https://www.dazhuanlan.com/2019/11/14/5dccb299e8052/?__cf_chl_jschl_tk__=c53175aab4cc0af8ec9a91f745915bf0727370af-1609725695-0-AaRmYwsuupPLQMykoiqWBZVaMcpc17du_AQbah7jAzcCykb8eGGFmhv8vI9J3WxnKc9ZhW-BKZ2sUTw3brEYMB4DuBxQEEAPNGhnbJGmp-dSpjIzpTPIebcdFMl7ImmQGEBWq3CEn-gioECn00ikH9idpje8Hr6_RmnaDpzkFTSykpqk1CaRP62tDxEqLSh_cQDGmfHFUQQScKrbkkvWBtFHImG0bGaDqfTGAinuxA_eIXHh2xaBgVgwJPB3jLsFvimTWhDTwAfH6pSERAZrbvFW4sdA_tSlJaV6WqbIKhVsWqq9UHlLz52czwk_qO2w2cHjHm_CdjQ1L5b-L_9H7o8)
+
