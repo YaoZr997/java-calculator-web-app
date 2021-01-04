@@ -151,6 +151,7 @@ $ mvn clean verify sonar:sonar -Dsonar.login=*************************
 [INFO] Analysis total time: 13.814 s
 ......
 ```
+>Attention: Add Sonar Tasks in your Azure Pipeline, need SonarQube Develop Edition.
 
 ## 9. Delete repo
 Click repo "maping/java-calculator-web-app", then click "Settings", then drop down to "Danger Zone", click "Delete this repository".
