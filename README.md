@@ -140,7 +140,19 @@ Visit URL: http://localhost:8080/webdav/index.html
 
 ## 7. Create a Multi-stage Release pipeline (Test -> Product Envirnonment） 
 
-## 8. Delete repo
+## 8. Scan with SonarQube 8.6
+Modify ~/.m2/setting.xml
+```console
+$ mvn clean verify sonar:sonar -Dsonar.login=*************************
+.......
+[INFO] ANALYSIS SUCCESSFUL, you can browse http://40.115.187.227:9000/dashboard?id=com.mwit.calculator%3Ajava-calculator-web-app
+[INFO] Note that you will be able to access the updated dashboard once the server has processed the submitted analysis report
+[INFO] More about the report processing at http://40.115.187.227:9000/api/ce/task?id=AXbLbS28QY5b3LULUBiZ
+[INFO] Analysis total time: 13.814 s
+......
+```
+
+## 9. Delete repo
 Click repo "maping/java-calculator-web-app", then click "Settings", then drop down to "Danger Zone", click "Delete this repository".
 
 ## Reference
