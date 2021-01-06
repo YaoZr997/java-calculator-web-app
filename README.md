@@ -240,6 +240,12 @@ service "java-calculator-web-app" deleted
 ```
 Visit http://20.39.169.44/rest/calculator/ping
 
+Delete namespace
+```console
+$ kubectl delete namespace dev
+namespace "dev" deleted
+```
+
 ## 11. Delete repo
 Click repo "maping/java-calculator-web-app", then click "Settings", then drop down to "Danger Zone", click "Delete this repository".
 
