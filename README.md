@@ -188,9 +188,11 @@ Tue Jan 05 07:50:04 UTC 2021
 Press Control-C to stop and remove the container.
 
 Push Docker Image to Docker Hub
+```console
 $ docker tag java-calculator-web-app:latest maping930883/java-calculator-web-app:latest
 $ docker login -u ******* -p *******
 $ docker push maping930883/java-calculator-web-app:latest
+```
 
 ## 10. Delete repo
 Click repo "maping/java-calculator-web-app", then click "Settings", then drop down to "Danger Zone", click "Delete this repository".
