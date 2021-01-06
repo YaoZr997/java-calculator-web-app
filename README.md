@@ -194,7 +194,53 @@ $ docker login -u ******* -p *******
 $ docker push maping930883/java-calculator-web-app:latest
 ```
 
-## 10. Delete repo
+## 10. Deploy to K8S
+Deploy deployment
+```console
+$ kubectl create namespace dev
+namespace/dev created
+$ kubectl create secret docker-registry maping930883secret --docker-username=********* --docker-password=********* --docker-email=********* -n dev
+secret/maping930883secret created
+$ kubectl apply -f deployment.yml -n dev
+deployment.apps/java-calculator-web-app created
+$ kubectl get deployment -n dev
+NAME                      READY   UP-TO-DATE   AVAILABLE   AGE
+java-calculator-web-app   1/1     1            1           45s
+```
+If deploy failed，you can delete deployment
+```console
+$ kubectl delete -f deployment.yml -n dev
+deployment.apps "java-calculator-web-app" deleted
+```
+Debug pod
+```console
+$ kubectl get pod -n dev
+NAME                                       READY   STATUS    RESTARTS   AGE
+java-calculator-web-app-5747ddc86b-fpqdj   1/1     Running   0          80s
+$ kubectl exec -it java-calculator-web-app-5747ddc86b-fpqdj -n dev -- bash 
+root@java-calculator-web-app-5747ddc86b-fpqdj:/usr/local/tomcat# curl localhost:8080/rest/calculator/ping
+Welcome to Java Calculator Web App!
+
+Wed Jan 06 10:26:20 UTC 2021
+root@java-calculator-web-app-5747ddc86b-fpqdj:/usr/local/tomcat# exit
+$ kubectl logs java-calculator-web-app-5747ddc86b-fpqdj -n dev
+```
+Deploy service
+```console
+$ kubectl apply -f service.yml -n dev
+service/java-calculator-web-app created
+$ kubectl get svc -n dev
+NAME                      TYPE           CLUSTER-IP     EXTERNAL-IP    PORT(S)        AGE
+java-calculator-web-app   LoadBalancer   10.0.161.183   20.39.169.44   80:32326/TCP   46s
+```
+If deploy failed，you can delete service
+```console
+$ kubectl delete -f service.yml -n dev
+service "java-calculator-web-app" deleted
+```
+Visit http://20.39.169.44/rest/calculator/ping
+
+## 11. Delete repo
 Click repo "maping/java-calculator-web-app", then click "Settings", then drop down to "Danger Zone", click "Delete this repository".
 
 ## Reference
