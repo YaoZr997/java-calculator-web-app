@@ -153,7 +153,46 @@ $ mvn clean verify sonar:sonar -Dsonar.login=*************************
 ```
 >Attention: Add Sonar Tasks in your Azure Pipeline, need SonarQube Develop Edition.
 
-## 9. Delete repo
+## 9. Containerize
+Create Dockerfile
+```console
+$ vim Dockerfile
+FROM tomcat
+
+LABEL maintainer="pinm@microsoft.com"
+
+RUN rm -rf $CATALINA_HOME/webapps/ROOT
+COPY target/java-calculator-web-app.war $CATALINA_HOME/webapps/ROOT.war
+```
+Build & Run Docker Image
+```console
+$ docker build -t java-calculator-web-app .
+$ docker images
+REPOSITORY                TAG       IMAGE ID       CREATED         SIZE
+java-calculator-web-app   latest    32e00035171c   19 hours ago    654MB
+$ docker run --rm -p 8181:8080 java-calculator-web-app
+......
+05-Jan-2021 07:47:30.999 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/usr/local/tomcat/webapps/ROOT.war] has finished in [1,714] ms
+05-Jan-2021 07:47:31.014 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+05-Jan-2021 07:47:31.036 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1844] milliseconds
+```
+Visist Container Application
+```console
+$ curl http://localhost:8181/rest/calculator/ping
+Welcome to Java Calculator Web App!
+
+Tue Jan 05 07:50:04 UTC 2021
+```
+>Explain: --rm means delete the container after stopping it.
+
+Press Control-C to stop and remove the container.
+
+Push Docker Image to Docker Hub
+$ docker tag java-calculator-web-app:latest maping930883/java-calculator-web-app:latest
+$ docker login -u ******* -p *******
+$ docker push maping930883/java-calculator-web-app:latest
+
+## 10. Delete repo
 Click repo "maping/java-calculator-web-app", then click "Settings", then drop down to "Danger Zone", click "Delete this repository".
 
 ## Reference
