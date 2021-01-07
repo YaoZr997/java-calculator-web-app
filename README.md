@@ -261,8 +261,11 @@ $ cd /mnt/c/Users/pinm/code/github/java-calculator-web-app
 $ helm create chart
 Creating chart
 ```
-
-Configure chart //TODO
+Configure chart
+- delete everything under /templates, keeping only _helpers.tpl
+- delete tests folder under templates
+- copy all the yaml files directly into templates folder
+- empty all the content of values.yaml
 ```console
 $ helm template java-calculator-web-app chart
 ```
