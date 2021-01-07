@@ -275,4 +275,5 @@ Click repo "maping/java-calculator-web-app", then click "Settings", then drop do
 11. [Azure DevOps integrate with SonarQube](https://www.dazhuanlan.com/2019/11/14/5dccb299e8052/?__cf_chl_jschl_tk__=c53175aab4cc0af8ec9a91f745915bf0727370af-1609725695-0-AaRmYwsuupPLQMykoiqWBZVaMcpc17du_AQbah7jAzcCykb8eGGFmhv8vI9J3WxnKc9ZhW-BKZ2sUTw3brEYMB4DuBxQEEAPNGhnbJGmp-dSpjIzpTPIebcdFMl7ImmQGEBWq3CEn-gioECn00ikH9idpje8Hr6_RmnaDpzkFTSykpqk1CaRP62tDxEqLSh_cQDGmfHFUQQScKrbkkvWBtFHImG0bGaDqfTGAinuxA_eIXHh2xaBgVgwJPB3jLsFvimTWhDTwAfH6pSERAZrbvFW4sdA_tSlJaV6WqbIKhVsWqq9UHlLz52czwk_qO2w2cHjHm_CdjQ1L5b-L_9H7o8)
 12. https://discuss.kubernetes.io/t/creating-docker-registry-secret-using-a-yaml-file/7042/2
 13. https://blog.cloudhelix.io/using-a-private-docker-registry-with-kubernetes-f8d5f6b8f646
+14. https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
 
