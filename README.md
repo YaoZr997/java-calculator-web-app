@@ -297,16 +297,7 @@ deployment:
 
 # deployment.yaml
 image: {{ .Values.deployment.image }}:{{ .Values.deployment.tag }}
-
-# upgrade our release
-
-helm upgrade java-calculator-web-app chart/ --values ./chart/values.yaml -n dev
-
-# see revision increased
-
-helm list
 ```
-
 ```console
 $ helm upgrade java-calculator-web-app chart/ --values ./chart/values.yaml -n dev
 Release "java-calculator-web-app" has been upgraded. Happy Helming!
@@ -321,7 +312,25 @@ NAME                    NAMESPACE       REVISION        UPDATED                 
 java-calculator-web-app dev             2               2021-01-07 14:53:15.3273378 +0800 CST   deployed        chart-0.1.0                                                             1.16.0
 ```
 
-### 10.5 Delete the namespace
+### 10.5 Make our Chart more generic
+
+Let's make our chart generic so it can be reused:
+For the following objects, replace `java-calculator-web-app` to inject: `"{{ .Values.name }}"`
+
+- deployment.yaml
+- services.yaml
+- secret.yaml
+
+Now that our application is generic
+We can deploy another copy of it.
+
+
+Create our second and third app values file example-app-02.values.yaml
+
+helm install example-app-02 example-app --values ./example-app/example-app-02.values.yaml
+
+
+### 10.6 Delete the namespace
 ```console
 $ kubectl delete namespace dev
 namespace "dev" deleted
