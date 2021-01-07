@@ -287,31 +287,41 @@ if install failed, you can delete the release
 $ helm delete java-calculator-web-app -n dev
 release "java-calculator-web-app" uninstalled
 ```
-Value injections for our Chart
-For CI systems, we may want to inject an image tag as a build number
-
+### 10.4 Value injections for our Chart
 Basic parameter injection:
 ```code
 # values.yaml
-
 deployment:
-  image: "aimvector/python"
-  tag: "1.0.4"
+ image: "maping930883/java-calculator-web-app"
+ tag: "latest"
 
 # deployment.yaml
-
 image: {{ .Values.deployment.image }}:{{ .Values.deployment.tag }}
 
 # upgrade our release
 
-helm upgrade example-app example-app --values ./example-app/values.yaml
+helm upgrade java-calculator-web-app chart/ --values ./chart/values.yaml -n dev
 
 # see revision increased
 
 helm list
 ```
 
-### 10.4 Delete the namespace
+```console
+$ helm upgrade java-calculator-web-app chart/ --values ./chart/values.yaml -n dev
+Release "java-calculator-web-app" has been upgraded. Happy Helming!
+NAME: java-calculator-web-app
+LAST DEPLOYED: Thu Jan  7 14:53:15 2021
+NAMESPACE: dev
+STATUS: deployed
+REVISION: 2
+TEST SUITE: None
+$ helm list
+NAME                    NAMESPACE       REVISION        UPDATED                                 STATUS          CHART                                                                   APP VERSION
+java-calculator-web-app dev             2               2021-01-07 14:53:15.3273378 +0800 CST   deployed        chart-0.1.0                                                             1.16.0
+```
+
+### 10.5 Delete the namespace
 ```console
 $ kubectl delete namespace dev
 namespace "dev" deleted
