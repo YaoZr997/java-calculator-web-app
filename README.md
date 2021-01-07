@@ -255,7 +255,16 @@ service "java-calculator-web-app" deleted
 Visit http://20.39.169.44/rest/calculator/ping
 
 ### 10.3 Deploy to K8S by Helm
-Helm install
+Create chart
+```console
+$ cd /mnt/c/Users/pinm/code/github/java-calculator-web-app
+$ helm create chart
+Creating chart
+```
+
+Configure chart //TODO
+
+Install chart
 ```console
 $ helm install java-calculator-web-app chart/ -n dev
 NAME: java-calculator-web-app
