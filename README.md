@@ -263,6 +263,9 @@ Creating chart
 ```
 
 Configure chart //TODO
+```console
+$ helm template java-calculator-web-app chart
+```
 
 Install chart
 ```console
