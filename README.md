@@ -273,9 +273,9 @@ NAMESPACE: dev
 STATUS: deployed
 REVISION: 1
 TEST SUITE: None
-$ helm list
+$ helm list -n dev
 NAME                    NAMESPACE       REVISION        UPDATED                                 STATUS          CHART                                                                   APP VERSION
-kubernetes-ingress      default         1               2020-09-09 18:07:49.059918 +0800 CST    deployed        kubernetes-ingress-1.6.0                                                1.4.6
+java-calculator-web-app dev             1               2021-01-07 10:26:47.7316223 +0800 CST   deployed        chart-0.1.0                                                             1.16.0
 ```
 if install failed, you can delete the release
 ```console
