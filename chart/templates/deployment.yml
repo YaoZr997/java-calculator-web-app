@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: java-calculator-web-app
+  labels:
+    app: java-calculator-web-app
+spec:
+  replicas: 1 #here is the configuration for the actual agent always running
+  selector:
+    matchLabels:
+      app: java-calculator-web-app
+  template:
+    metadata:
+      labels:
+        app: java-calculator-web-app
+    spec:
+      containers:
+      - name: java-calculator-web-app
+        image: maping930883/java-calculator-web-app:latest
+        volumeMounts:
+        - mountPath: /var/run/docker.sock
+          name: docker-volume
+      imagePullSecrets:
+        - name: maping930883secret
+      volumes:
+      - name: docker-volume
+        hostPath:
+          path: /var/run/docker.sock
