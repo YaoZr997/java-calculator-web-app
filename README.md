@@ -313,22 +313,22 @@ java-calculator-web-app dev             2               2021-01-07 14:53:15.3273
 ```
 
 ### 10.5 Make our Chart more generic
-
 Let's make our chart generic so it can be reused:
+
 For the following objects, replace `java-calculator-web-app` to inject: `"{{ .Values.name }}"`
 
 - deployment.yaml
 - services.yaml
 - secret.yaml
 
-Now that our application is generic
-We can deploy another copy of it.
+Now that our application is generic, We can deploy another copy of it.
 
+Create our second and third app values file: java-calculator-web-app-01.values.yaml and java-calculator-web-app-02.values.yaml
 
-Create our second and third app values file example-app-02.values.yaml
-
-helm install example-app-02 example-app --values ./example-app/example-app-02.values.yaml
-
+```console
+$ helm install java-calculator-web-app-01 chart/ --values ./chart/java-calculator-web-app-01.values.yaml -n dev
+$ helm install java-calculator-web-app-02 chart/ --values ./chart/java-calculator-web-app-02.values.yaml -n dev
+```
 
 ### 10.6 Delete the namespace
 ```console
