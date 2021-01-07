@@ -195,12 +195,24 @@ $ docker push maping930883/java-calculator-web-app:latest
 ```
 
 ## 10. Deploy to K8S
-Deploy deployment
+Create namespace
 ```console
 $ kubectl create namespace dev
 namespace/dev created
+```
+Create secret by command line
+```console
 $ kubectl create secret docker-registry maping930883secret --docker-username=********* --docker-password=********* --docker-email=********* -n dev
 secret/maping930883secret created
+```
+Or you can create secret by YAML file
+```console
+$ cat ~/.docker/config.json | base64
+$ kubectl apply -f registry-pull-secret.yml -n dev
+secret/maping930883secret created
+```
+Create deployment
+```console
 $ kubectl apply -f deployment.yml -n dev
 deployment.apps/java-calculator-web-app created
 $ kubectl get deployment -n dev
@@ -261,4 +273,6 @@ Click repo "maping/java-calculator-web-app", then click "Settings", then drop do
 9. https://blog.csdn.net/alinyua/article/details/83244983
 10. https://blog.csdn.net/alinyua/article/details/83267934
 11. [Azure DevOps integrate with SonarQube](https://www.dazhuanlan.com/2019/11/14/5dccb299e8052/?__cf_chl_jschl_tk__=c53175aab4cc0af8ec9a91f745915bf0727370af-1609725695-0-AaRmYwsuupPLQMykoiqWBZVaMcpc17du_AQbah7jAzcCykb8eGGFmhv8vI9J3WxnKc9ZhW-BKZ2sUTw3brEYMB4DuBxQEEAPNGhnbJGmp-dSpjIzpTPIebcdFMl7ImmQGEBWq3CEn-gioECn00ikH9idpje8Hr6_RmnaDpzkFTSykpqk1CaRP62tDxEqLSh_cQDGmfHFUQQScKrbkkvWBtFHImG0bGaDqfTGAinuxA_eIXHh2xaBgVgwJPB3jLsFvimTWhDTwAfH6pSERAZrbvFW4sdA_tSlJaV6WqbIKhVsWqq9UHlLz52czwk_qO2w2cHjHm_CdjQ1L5b-L_9H7o8)
+12. https://discuss.kubernetes.io/t/creating-docker-registry-secret-using-a-yaml-file/7042/2
+13. https://blog.cloudhelix.io/using-a-private-docker-registry-with-kubernetes-f8d5f6b8f646
 
