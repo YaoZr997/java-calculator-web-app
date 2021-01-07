@@ -195,11 +195,13 @@ $ docker push maping930883/java-calculator-web-app:latest
 ```
 
 ## 10. Deploy to K8S
-Create a namespace
+
+### 10.1 Create a namespace
 ```console
 $ kubectl create namespace dev
 namespace/dev created
 ```
+### 10.2 Deploy to K8S by YAML files
 Create a secret for pulling image from Docker Hub by command line
 ```console
 $ kubectl create secret docker-registry maping930883secret --docker-username=********* --docker-password=********* --docker-email=********* -n dev
@@ -252,7 +254,26 @@ service "java-calculator-web-app" deleted
 ```
 Visit http://20.39.169.44/rest/calculator/ping
 
-Delete the namespace
+### 10.3 Deploy to K8S by Helm
+Helm install
+```console
+$ helm install java-calculator-web-app chart/ -n dev
+NAME: java-calculator-web-app
+LAST DEPLOYED: Thu Jan  7 10:24:23 2021
+NAMESPACE: dev
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+$ helm list
+NAME                    NAMESPACE       REVISION        UPDATED                                 STATUS          CHART                                                                   APP VERSION
+kubernetes-ingress      default         1               2020-09-09 18:07:49.059918 +0800 CST    deployed        kubernetes-ingress-1.6.0                                                1.4.6
+```
+if install failed, you can delete the release
+```console
+$ helm delete java-calculator-web-app -n dev
+release "java-calculator-web-app" uninstalled
+```
+### 10.4 Delete the namespace
 ```console
 $ kubectl delete namespace dev
 namespace "dev" deleted
