@@ -276,4 +276,5 @@ Click repo "maping/java-calculator-web-app", then click "Settings", then drop do
 12. https://discuss.kubernetes.io/t/creating-docker-registry-secret-using-a-yaml-file/7042/2
 13. https://blog.cloudhelix.io/using-a-private-docker-registry-with-kubernetes-f8d5f6b8f646
 14. https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
+15. [Introduction to Helm | Kubernetes Tutorial | Beginners Guide](https://www.youtube.com/watch?v=5_J7RWLLVeQ)
 
