@@ -266,6 +266,8 @@ Configure chart
 - delete tests folder under templates
 - copy all the yaml files directly into templates folder
 - empty all the content of values.yaml
+
+Check all the values are set
 ```console
 $ helm template java-calculator-web-app chart
 ```
@@ -298,6 +300,11 @@ deployment:
 # deployment.yaml
 image: {{ .Values.deployment.image }}:{{ .Values.deployment.tag }}
 ```
+Check all the vaiable values are set
+```console
+$ helm template java-calculator-web-app chart
+```
+Upgrade application
 ```console
 $ helm upgrade java-calculator-web-app chart/ --values ./chart/values.yaml -n dev
 Release "java-calculator-web-app" has been upgraded. Happy Helming!
@@ -319,15 +326,33 @@ For the following objects, replace `java-calculator-web-app` to inject: `"{{ .Va
 
 - deployment.yaml
 - services.yaml
-- secret.yaml
+- registry-pull-secret.yaml
 
 Now that our application is generic, We can deploy another copy of it.
 
 Create our second and third app values file: java-calculator-web-app-01.values.yaml and java-calculator-web-app-02.values.yaml
 
+Check all the vaiable values are set
+```console
+$ helm template java-calculator-web-app chart --values ./chart/java-calculator-web-app-01.values.yaml
+$ helm template java-calculator-web-app chart --values ./chart/java-calculator-web-app-02.values.yaml
+```
+Install new application
 ```console
 $ helm install java-calculator-web-app-01 chart/ --values ./chart/java-calculator-web-app-01.values.yaml -n dev
+NAME: java-calculator-web-app-01
+LAST DEPLOYED: Fri Jan  8 08:53:28 2021
+NAMESPACE: dev
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
 $ helm install java-calculator-web-app-02 chart/ --values ./chart/java-calculator-web-app-02.values.yaml -n dev
+NAME: java-calculator-web-app-02
+LAST DEPLOYED: Fri Jan  8 08:53:28 2021
+NAMESPACE: dev
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
 ```
 
 ### 10.6 Delete the namespace
