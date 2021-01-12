@@ -138,7 +138,11 @@ WAGON_VERSION: 1.0-beta-2
 ```
 Visit URL: http://localhost:8080/webdav/index.html
 
-## 7. Create a Multi-stage Release pipeline (Test -> Product Envirnonment） 
+## 7. Functional Testing // TODO
+
+## 7. Performance Testing // TODO
+
+## 7. Create a Multi-stage Release pipeline (Test -> Product Envirnonment） // TODO
 
 ## 8. Scan with SonarQube 8.6
 Modify ~/.m2/setting.xml
