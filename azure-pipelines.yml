@@ -17,9 +17,7 @@ resources:
     resourceGroup: MWIT-ACR-RG
     registry: mwitacrkoreacentral
     repository: java-calculator-web-app
-    trigger: 
-      tags:
-      - $(Build.BuildId)
+    trigger: true
 
 steps:
 - bash: |
