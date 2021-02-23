@@ -1,0 +1,22 @@
+resources:
+  containers:
+  - container: java-calculator-web-app
+    type: ACR  
+    azureSubscription: Azure-Conn
+    resourceGroup: MWIT-ACR-RG
+    registry: mwitacrkoreacentral
+    repository: java-calculator-web-app
+    trigger: 
+      tags:
+      - $(Build.BuildId)
+
+pool:
+  vmImage: 'ubuntu-20.04'
+
+steps:
+- bash: |
+   echo 'In Release Pipeline'
+   
+   echo  '$(Build.BuildId)：' +$(Build.BuildId)
+   
+  displayName: 'Bash Script'
