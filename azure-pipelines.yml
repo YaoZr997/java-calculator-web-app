@@ -1,0 +1,30 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- none
+
+pool:
+  vmImage: ubuntu-latest
+
+resources:
+  containers:
+  - container: java-calculator-web-app
+    type: ACR  
+    azureSubscription: Azure-Conn
+    resourceGroup: MWIT-ACR-RG
+    registry: mwitacrkoreacentral
+    repository: java-calculator-web-app
+    trigger: 
+      tags:
+      - $(Build.BuildId)
+
+steps:
+- bash: |
+   echo 'In Release Pipeline'
+   
+   echo  '$(Build.BuildId)：' +$(Build.BuildId)
+   
+  displayName: 'Bash Script'
