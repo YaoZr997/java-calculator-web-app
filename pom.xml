@@ -19,7 +19,7 @@
     <repositories>
         <repository>
             <id>java-calculator-web-app</id>
-            <url>java-calculator-web-app/_packaging/java-calculator-web-app/maven/v1</url>
+            <url>https://pkgs.dev.azure.com/maping930883/java-calculator-web-app/_packaging/java-calculator-web-app/maven/v1</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
@@ -32,7 +32,7 @@
     <distributionManagement>
         <repository>
             <id>java-calculator-web-app</id>
-            <url>java-calculator-web-app/_packaging/java-calculator-web-app/maven/v1</url>
+            <url>https://pkgs.dev.azure.com/maping930883/java-calculator-web-app/_packaging/java-calculator-web-app/maven/v1</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
