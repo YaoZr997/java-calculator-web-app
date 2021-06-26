@@ -8,16 +8,38 @@
     <version>1.0-SNAPSHOT</version>
     <name>java-calculator-web-app</name>
 
-    <properties>
+   <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <!-- org.glassfish.jersey 3.0.0 runtime error: 源服务器未能找到目标资源的表示或者是不愿公开一个已经存在的资源表示 -->
         <jersey-version>2.33</jersey-version>
-
     </properties>
 
+    <repositories>
+        <repository>
+            <id>java-calculator-web-app</id>
+            <url>java-calculator-web-app/_packaging/java-calculator-web-app/maven/v1</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
     <distributionManagement>
+        <repository>
+            <id>java-calculator-web-app</id>
+            <url>java-calculator-web-app/_packaging/java-calculator-web-app/maven/v1</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
         <site>
             <id>tomcatserver</id>
             <url>dav:http://127.0.0.1:8080/webdav/</url>
