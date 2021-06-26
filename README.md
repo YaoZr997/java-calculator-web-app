@@ -1,8 +1,8 @@
 # A Java Calculator Web Application
 [![Build status](https://dev.azure.com/maping930883/java-calculator-web-app/_apis/build/status/java-calculator-web-app-Maven-CI%26CD)](https://dev.azure.com/maping930883/java-calculator-web-app/_build/latest?definitionId=32)
 
-Maven default lifecycle phases:
-validate->compile->test->package->integration-test->verify->install->deploy
+**Maven default lifecycle phases:
+validate->compile->test->package->integration-test->verify->install->deploy**
 
 ## 1. Create a repo manually
 
